@@ -7,7 +7,11 @@ const EditStudent=()=>{
     const navigate=useNavigate()
     const [student,setStudent]=useState({name:"",email:""})
     useEffect(()=>{
-        getStudent(id).then((res)=>setStudent(res.data))
+        getStudent(id).then((res)=>{
+            if(res.data){
+                setStudent(res.data)
+            }
+        }).catch(err=>console.error("Error fetching student:", err))
     },[id])
     const submit=async(e)=>{
         e.preventDefault()

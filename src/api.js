@@ -13,7 +13,7 @@ export const deleteStudent=(id)=>{
 }
 
 export const getStudent=(id)=>{
-    return axios.get(`${API}/allstudents/${id}`)
+    return axios.get(`${API}/${id}`)
 }
 
 export const updateStudent=(id,data)=>{

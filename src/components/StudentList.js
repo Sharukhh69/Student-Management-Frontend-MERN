@@ -32,7 +32,7 @@ const StudentList=()=>{
                 </thead>
                 <tbody>
                     {
-                        students.map((student)=>{
+                        students.filter(student => student.rollno && student.name).map((student)=>{
                             return(
                             <tr key={student.rollno}>
                                 <td>{student.rollno}</td>
@@ -40,8 +40,6 @@ const StudentList=()=>{
                                 <td>{student.email}</td>
                                 <td>
                                     <Link to={`/edit/${student.rollno}`}>Edit</Link>
-                                </td>
-                                <td>
                                     <button onClick={()=> removeStudent(student.rollno)}>Delete</button>
                                 </td>
 

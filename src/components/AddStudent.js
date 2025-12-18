@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {createStudent} from "../api"
+ 
 import {useNavigate} from "react-router-dom"
 import axios from "axios"
 const API="http://localhost:5000/api/students"
